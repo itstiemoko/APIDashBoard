@@ -1,5 +1,5 @@
 # OdkApprenant
-Une API permettant de :
+Une API Rest permettant de :
 Création d’un nouvel apprenant,
 Modification d’un nouvel apprenant,
 Afficher la liste des apprenants,

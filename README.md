@@ -10,6 +10,7 @@ Pour tester cette API, veuillez créer une base de donnée manuellement dans Xam
 Ensuite, commencez par ajouter un apprenant en utilisant les attributs de Apprenant.java
 
 Le lien des requêtes : localhost:8080/api
+
   GET:
     /listApprenants
     /getInfoApprenantById/{donnerID}

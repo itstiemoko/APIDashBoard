@@ -72,4 +72,16 @@ public class ApprenantServiceImp implements ApprenantService
         existingApprenant.setDateCreation(apprenant.getDateCreation());
         existingApprenant.setDateModification(apprenant.getDateModification());
     }
+
+    public boolean verifyLoginAndPassword(String apprenantLogin, String apprenantPassword)
+    {
+        Optional<Apprenant> loginPassword = this.apprenantRepository.verifyLoginPassword(apprenantLogin, apprenantPassword);
+
+        if(loginPassword.isPresent())
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

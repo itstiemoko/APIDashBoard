@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /*_____________Le contrôleur de notre apprenant____________*/
+@CrossOrigin
 @RestController
 @RequestMapping(path = "/api")
 public class ApprenantController
@@ -47,5 +48,11 @@ public class ApprenantController
     public void modifyApprenant(@PathVariable("apprenantId") Integer apprenantId, @RequestBody Apprenant apprenant)
     {
         this.apprenantServiceImp.modifierApprenant(apprenantId, apprenant);
+    }
+
+    @GetMapping("/isLoginPasswordExist")
+    public boolean verifyLoginPassword(@RequestParam String login, @RequestParam String password)
+    {
+        return this.apprenantServiceImp.verifyLoginAndPassword(login, password);
     }
 }

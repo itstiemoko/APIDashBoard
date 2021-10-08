@@ -13,4 +13,10 @@ public interface ApprenantRepository extends JpaRepository<Apprenant, Integer>
     /*_______On fait une requête JPQL personnalisée pour récupérer l'apprenant par email_______*/
     @Query("Select app From Apprenant app Where app.apprenantEmail = :email")
     Optional<Apprenant> findApprenantByEmail(@Param("email") String apprenantEmail);
+
+    @Query("Select app From Apprenant app Where app.apprenantLogin = :login and app.apprenantPassword = :password")
+    Optional<Apprenant> verifyLoginPassword(@Param("login") String login, @Param("password") String password);
+
+    @Query("Select app From Apprenant app Where app.apprenantLogin = ?1 and app.apprenantPassword = ?2")
+    Optional<Apprenant> verification(String login, String motdepass);
 }

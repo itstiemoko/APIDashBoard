@@ -15,8 +15,5 @@ public interface ApprenantRepository extends JpaRepository<Apprenant, Integer>
     Optional<Apprenant> findApprenantByEmail(@Param("email") String apprenantEmail);
 
     @Query("Select app From Apprenant app Where app.apprenantLogin = :login and app.apprenantPassword = :password")
-    Optional<Apprenant> verifyLoginPassword(@Param("login") String login, @Param("password") String password);
-
-    @Query("Select app From Apprenant app Where app.apprenantLogin = ?1 and app.apprenantPassword = ?2")
-    Optional<Apprenant> verification(String login, String motdepass);
+    Apprenant verifyLoginPassword(@Param("login") String login, @Param("password") String password);
 }

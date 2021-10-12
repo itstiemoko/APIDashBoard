@@ -51,7 +51,7 @@ public class ApprenantController
     }
 
     @GetMapping("/isLoginPasswordExist")
-    public boolean verifyLoginPassword(@RequestParam String login, @RequestParam String password)
+    public Apprenant verifyLoginPassword(@RequestParam String login, @RequestParam String password)
     {
         return this.apprenantServiceImp.verifyLoginAndPassword(login, password);
     }

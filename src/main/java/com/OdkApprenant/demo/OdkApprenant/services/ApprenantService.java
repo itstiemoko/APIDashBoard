@@ -12,5 +12,5 @@ public interface ApprenantService
     public abstract String deleteApprenant(Integer apprenantId);
     public abstract void modifierApprenant(Integer apprenantId, Apprenant apprenant);
     public abstract Apprenant getInfoApprenantById(Integer apprenantId);
-    public abstract boolean verifyLoginAndPassword(String apprenantLogin, String apprenantPassword);
+    public abstract Apprenant verifyLoginAndPassword(String apprenantLogin, String apprenantPassword);
 }

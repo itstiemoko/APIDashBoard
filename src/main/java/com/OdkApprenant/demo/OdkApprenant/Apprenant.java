@@ -1,6 +1,7 @@
 package com.OdkApprenant.demo.OdkApprenant;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 /*_______________On definit la classe Apprenant avec @Entity qui sera notre table dans la base_____________*/
 @Entity
@@ -24,7 +25,7 @@ public class Apprenant
     @Column(nullable = false, length = 15)
     private String apprenantTelephone;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 30, unique = true)
     private String apprenantEmail;
 
     @Column(nullable = false, length = 10)
@@ -45,6 +46,22 @@ public class Apprenant
 
     @Column(nullable = false)
     private LocalDate dateModification;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "presenceApprenant",
+            joinColumns = @JoinColumn(name = "id_apprenant"),
+            inverseJoinColumns = @JoinColumn(name = "id_presence")
+    )
+    private List<ListePresence> listePresences;
+
+    public List<ListePresence> getListePresences() {
+        return listePresences;
+    }
+
+    public void setListePresences(List<ListePresence> listePresences) {
+        this.listePresences = listePresences;
+    }
 
     //Le constructeur par defaut
     public Apprenant(){}

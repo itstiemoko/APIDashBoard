@@ -42,7 +42,7 @@ public class Apprenant
     private ApprenantStatus apprenantStatus;
 
     @Column(nullable = false)
-    private LocalDate dateCreation;
+    private LocalDate dateCreation = LocalDate.now();
 
     @Column(nullable = false)
     private LocalDate dateModification;

@@ -31,7 +31,7 @@ public class Formateur
     private String formateurTelephone;
 
     @Column(nullable = false)
-    private LocalDate dateCreation;
+    private LocalDate dateCreation= LocalDate.now();
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(

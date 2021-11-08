@@ -69,7 +69,6 @@ public class ApprenantServiceImp implements ApprenantService
         existingApprenant.setApprenantPassword(apprenant.getApprenantPassword());
         existingApprenant.setApprenantGenre(apprenant.getApprenantGenre());
         existingApprenant.setApprenantStatus(apprenant.getApprenantStatus());
-        existingApprenant.setDateCreation(apprenant.getDateCreation());
         existingApprenant.setDateModification(apprenant.getDateModification());
     }
 

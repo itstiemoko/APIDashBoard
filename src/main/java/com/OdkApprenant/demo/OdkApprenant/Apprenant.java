@@ -42,9 +42,8 @@ public class Apprenant
     private ApprenantStatus apprenantStatus;
 
     @Column(nullable = false)
-    private LocalDate dateCreation;
+    private LocalDate dateCreation= LocalDate.now();
 
-    @Column(nullable = false)
     private LocalDate dateModification;
 
     @ManyToMany(cascade = CascadeType.ALL)
@@ -172,7 +171,7 @@ public class Apprenant
     }
 
     public LocalDate getDateModification() {
-        return dateModification;
+        return LocalDate.now();
     }
 
     public void setDateModification(LocalDate dateModification) {
